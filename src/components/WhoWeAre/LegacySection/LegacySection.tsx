@@ -1,5 +1,5 @@
 import './LegacySection.scss'
-import BarjeelImg from '@/assets/Barjeel.png';
+import BarjeelImg from '@/assets/geojit.png';
 import GeojitImg from '@/assets/geojit.png';
 
 export default function LegacySection() {
