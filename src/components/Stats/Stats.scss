@@ -1,0 +1,139 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+
+.stat {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  
+
+  
+
+
+
+ border-bottom: 1px solid; 
+  border-image: linear-gradient(
+    90deg,
+    rgba(253, 219, 7, 1),
+    rgba(251, 117, 19, 1),
+    rgba(248, 13, 42, 1),
+    rgba(124, 78, 131, 1)
+  ) 1;
+
+  
+
+  &__currency {
+    font-size: 48px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  &__number {
+    font-size: 72px;
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(0, 0, 0, 1);
+    font-family: Gotham;
+    margin-bottom: 40px;
+  }
+
+  &__suffix {
+    font-size: 48px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    font-family: Gotham;
+  }
+}
+
+@media (max-width: 768px) {
+  .stat__currency {
+    font-size: 32px;
+  }
+
+  .stat__number {
+    font-size: 64px;
+  }
+
+  .stat__suffix {
+    font-size: 24px;
+
+    
+  }
+}
+
+
+
+.stats {
+  background-color: $color-off-white;
+padding-top: 64px;
+padding-bottom: 64px;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include heading-serif;
+    font-size: 36px;
+    color: rgba(29, 49, 44, 1);
+    margin-bottom: $spacing-2xl;
+    font-family: Gotham;
+    font-weight: 400;
+
+     span {
+      color: rgba(29, 49, 44, 1);
+      font-family: Gotham;
+      font-size: 36px;
+      font-weight: 600;
+  
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+
+    @include responsive(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xl;
+    }
+
+    @include responsive(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    // border-left: 1px solid $color-gray-light;
+    // padding-left: $spacing-md;
+  }
+
+  &__value {
+    font-family: $font-primary;
+    font-size: $font-size-5xl;
+    font-weight: 700;
+    color: $color-dark;
+    line-height: 1;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__suffix {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    color: $color-gray-dark;
+    vertical-align: baseline;
+  }
+
+  &__caption {
+    font-size: 14px;
+    color:rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    font-weight: 500;
+    font-family: Gotham;
+    margin-top: 4px;
+  }
+}

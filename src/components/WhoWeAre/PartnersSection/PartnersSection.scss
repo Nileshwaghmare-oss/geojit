@@ -1,0 +1,31 @@
+.partners {
+    padding: 80px 72px;
+    // background: lightblue;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        // background: red;
+        margin-bottom: 56px;
+    }
+
+    &__title {
+        font-size: 16px;
+        text-transform: uppercase;
+        // background: gray;
+        padding: 16px;
+        border: 1px solid rgb(0 0 0 / 50%);
+        border-radius: 50px;
+    }
+
+    .partners__row--top, .partners__row--bottom{
+        display: flex;
+        justify-content: center;
+        gap: 160px;
+        margin-bottom: 64px;
+    }
+
+    .partners__row--bottom{
+        margin-bottom: 0;
+    }
+}

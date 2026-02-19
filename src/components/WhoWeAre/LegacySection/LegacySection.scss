@@ -1,0 +1,80 @@
+.legacy {
+	position: relative;
+	background: url('/src/assets/legacy-section-baner.png') center bottom / cover no-repeat;
+	min-height: 1000px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+	flex-direction: column;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, rgb(0 0 0 / 95%) 0%, rgb(0 0 0 / 85%) 20%, rgb(0 0 0 / 34%) 40%, rgb(0 0 0 / 0%) 65%, rgba(0, 0, 0, 0) 100%);
+		z-index: 1;
+		height: 1500px;
+	}
+}
+
+.legacy-content {
+	position: relative;
+	z-index: 1;
+	margin-top: 120px;
+	max-width: 730px;
+	padding: 0 24px;
+	padding-bottom: 72px;
+
+	@media (max-width: 768px) {
+		margin-top: 100px;
+	}
+
+	h2 {
+		padding-bottom: 48px;
+		font-size: 40px;
+		font-weight: 300;
+
+		@media (max-width: 768px) {
+			font-size: 32px;
+		}
+	}
+
+	p {
+		font-size: 16px;
+	}
+}
+
+.legacy-image {
+	height: 130px;
+}
+
+.legacy-images-container {
+	display: flex;
+	position: relative;
+	z-index: 1;
+	gap: 2rem;
+	align-items: center;
+}
+
+.gradient-line {
+	background: linear-gradient(to bottom,
+			transparent 0%,
+			#f5c518 20%,
+			#ffd700 50%,
+			#f5c518 80%,
+			transparent 100%);
+	width: 1.5px;
+	height: 120px;
+}
+
+.gradient-text {
+	background: linear-gradient(90deg,
+			#FDDB07 0%,
+			#FB7513 50%,
+			#F80D2A 75%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

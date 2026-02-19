@@ -1,0 +1,212 @@
+.commonhero {
+    position: relative;
+    padding: 0 72px;
+    display: flex;
+    min-height: 360px;
+    overflow: hidden;
+    background-color: #014440;
+    border-bottom: 4px solid;
+    -o-border-image: linear-gradient(90deg, rgb(253, 219, 7), rgb(251, 117, 19), rgb(248, 13, 42), rgb(124, 78, 131)) 1;
+    border-image: linear-gradient(90deg, rgb(253, 219, 7), rgb(251, 117, 19), rgb(248, 13, 42), rgb(124, 78, 131)) 1;
+
+    /* ================= DESKTOP IMAGE ================= */
+    &__image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        // width: 55%;
+        height: 100%;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 101%;
+            object-fit: cover;
+        }
+
+
+
+        /* Hide on mobile */
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    /* ================= MOBILE BACKGROUND ================= */
+    &__mobile-bg {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+    }
+
+    /* ================= OVERLAY ================= */
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+
+        /* Desktop overlay */
+        background: linear-gradient(to right,
+                rgba(1, 68, 64, 1) 0%,
+                rgba(1, 68, 64, 0.9) 40%,
+                rgba(1, 68, 64, 0.4) 70%,
+                rgba(1, 68, 64, 0) 100%);
+
+        /* Mobile overlay */
+        @media (max-width: 768px) {
+            background: linear-gradient(to bottom, rgba(1, 68, 64, 0.95) 0%, rgb(1 68 64 / 0%) 50%, rgb(1 68 64 / 0%) 80%, rgb(1 68 64 / 0%) 100%);
+
+        }
+    }
+
+    &__container {
+        display: grid;
+    }
+
+    /* ================= CONTENT ================= */
+    &__content {
+        position: relative;
+        z-index: 2;
+        flex: 0 0 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        color: #fff;
+        padding-top: 0px;
+
+        @media (max-width: 768px) {
+            flex: unset;
+            width: 100%;
+            // padding: 40px 20px;
+            // min-height: 100vh;
+            justify-content: center;
+
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 6px;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+    }
+
+    &__label::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 28%;
+        height: 1px;
+
+        background: linear-gradient(90deg,
+                rgba(253, 219, 7, 1) 0%,
+                rgba(251, 117, 19, 1) 35%,
+                rgba(248, 13, 42, 0) 70%,
+                rgba(124, 78, 131, 0) 100%);
+    }
+
+    /* ✅ Mobile */
+    @media (max-width: 768px) {
+        &__label::after {
+            width: 100%;
+        }
+    }
+
+
+    &__heading {
+        font-size: 48px;
+        font-weight: 300;
+        line-height: 1.3;
+        margin-bottom: 60px;
+        font-family: Gotham;
+
+        span {
+            color: #f7931e;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 28px;
+        }
+    }
+
+    &__btn {
+        margin-top: 20px;
+        padding: 10px 18px;
+        border: 1px solid #5aa6a0;
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        letter-spacing: 1px;
+        display: inline-block;
+    }
+
+    /* ================= MOBILE BOTTOM STRIP ================= */
+    &__bottom-strip {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 1);
+            background: linear-gradient(90deg,
+                    rgba(253, 219, 7, 1) 0%,
+                    rgba(251, 117, 19, 1) 50%,
+                    rgba(124, 78, 131, 1) 100%);
+
+            z-index: 2;
+        }
+    }
+}
+
+@media(max-width:768px) {
+    .commonhero {
+        border-bottom: none;
+        height: 440px;
+        padding: 0 20px !important;
+    }
+
+    .commonhero__label {
+        font-size: 16px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 24px !important;
+        }
+    }
+
+    .commonhero__heading {
+        font-size: 40px;
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
+
+}
+
+
+.gradient-text {
+    background: linear-gradient(90deg,
+            #FDDB07 0%,
+            #FB7513 50%,
+            #F80D2A 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

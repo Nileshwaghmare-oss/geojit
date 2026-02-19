@@ -1,0 +1,291 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.about {
+  background-color: rgba(240, 238, 233, 1);
+
+  &__container {
+    @include container;
+    border-top: 1px solid rgb(0 0 0 / 13%);
+    padding-bottom: 40px;
+  }
+
+  /* ---------------- HEADER ---------------- */
+
+  &__header-two {
+    padding-top: 40px;
+  }
+
+  &__header {
+    @include flex-between;
+    margin-bottom: 40px;
+    align-items: flex-start;
+
+    @include responsive(md) {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  &__heading {
+    @include heading-serif;
+    font-size: 36px;
+    font-family: Gotham;
+    color: rgba(29, 49, 44, 1);
+
+    span {
+      font-weight: 600;
+    }
+
+    @include responsive(md) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__link {
+    @include btn-about;
+  }
+
+  &__btn-two {
+    @include btn-about-two;
+  }
+
+  /* ---------------- GRID DESKTOP ---------------- */
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @include responsive(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include responsive(sm) {
+      display: none;
+    }
+  }
+
+  /* ---------------- SWIPER MOBILE ---------------- */
+
+  &__swiper {
+    display: none;
+
+    @include responsive(sm) {
+      display: block;
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    height: auto;
+  }
+
+  /* ---------------- CARD ---------------- */
+
+  &__card,
+  &__card-about {
+    position: relative;
+    background-color: rgba(252, 250, 246, 1);
+    border-radius: 8px;
+    padding: 32px;
+    overflow: hidden;
+    transition: 0.4s ease;
+    border: 1px solid transparent;
+    height: 441px;
+    width: 288px;
+
+    background:
+      linear-gradient(rgba(252, 250, 246, 1), rgba(252, 250, 246, 1)) padding-box,
+      linear-gradient(90deg, rgba(253, 219, 7, 1), rgba(251, 117, 19, 1)) border-box;
+  }
+   &__card-about-testimonil {
+    position: relative;
+    background-color: rgba(252, 250, 246, 1);
+    border-radius: 8px;
+    padding: 20px;
+    overflow: hidden;
+    transition: 0.4s ease;
+    border: 1px solid transparent;
+    height: 441px;
+    width: 288px;
+
+    background:
+      linear-gradient(rgba(252, 250, 246, 1), rgba(252, 250, 246, 1)) padding-box,
+      linear-gradient(90deg, rgba(253, 219, 7, 1), rgba(251, 117, 19, 1)) border-box;
+  }
+
+  
+
+  &__card-icon {
+    width: 77px;
+    height: 80px;
+    background-color: $color-primary;
+    border-radius: 8px;
+    @include flex-center;
+    margin-bottom: 48px;
+
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    @include responsive(sm) {
+      width: 60px;
+      height: 60px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__card-testi {
+    width: 30px; // desktop width
+    height: 40px; // desktop height
+    background-color: $color-primary;
+    border-radius: 8px;
+    @include flex-center;
+    margin-bottom: 48px;
+
+    img {
+      width: 26px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    @include responsive(sm) {
+      width: 40px; // mobile container
+      height: 30px;
+
+      img {
+        width: 20px; // mobile image
+        height: 16px;
+      }
+    }
+  }
+
+  &__card-title {
+    font-family: Gotham;
+    font-weight: 600;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    margin-bottom: 10px;
+  }
+
+  &__card-desc {
+    font-size: 16px;
+    font-family: Gotham;
+    color: rgba(0, 0, 0, 1);
+    line-height: 1.6;
+  }
+
+  &__testcard-desc {
+    font-size: 20px;
+    font-family: Gotham;
+    color: rgba(0, 0, 0, 1);
+    // line-height: 1.6;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  .about__card-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 40px;
+  }
+
+  .about__profile-img {
+    width: 56px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .about__profile-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .about__profile-info span {
+    font-size: 14px;
+    color: rgba(147, 144, 139, 1);
+  }
+
+  /* ---------------- HOVER IMAGE ANIMATION ---------------- */
+
+  &__card-hover-img {
+    position: absolute;
+    bottom: -102%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    transition: bottom 0.5s ease;
+  }
+
+  &__card:hover &__card-hover-img {
+    bottom: 0;
+  }
+
+  &__testimonial-head {
+    font-size: 36px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+/* ---------------- MOBILE MEDIA ---------------- */
+@media(max-width:768px){
+  .about__link {
+    font-size: 14px !important;
+  }
+
+  .about__heading {
+    font-size: 40px;
+  }
+
+  .about__testimonial-head {
+    font-size: 43px;
+  }
+
+  .about__card-desc {
+    font-size: 20px;
+  }
+
+  .about__card, .about__card-about{
+    width: 330px;
+  }
+
+  .about-img{
+    width: 330px;
+  }
+  .about__card-about-testimonil {
+     width: 330px !important;
+  }
+  
+}
+
+
+
+
+
+.wow {
+  visibility: hidden;
+}
+
+.animate__animated {
+  visibility: visible !important;
+}
+
+
+
+
+ 

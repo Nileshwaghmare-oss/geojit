@@ -1,0 +1,152 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.services {
+  @include section-padding;
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+
+  &__container {
+    @include container;
+  }
+
+  &__label {
+    @include label-text;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__heading {
+    @include heading-serif;
+    font-size: 36px;
+    color: rgba(255, 255, 255, 1);
+    margin-bottom: 24px;
+
+   span{
+    font-weight: 600;
+
+   }
+
+
+    @include responsive(md) {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+   
+    overflow-x: auto;
+  }
+
+  &__tab {
+    padding: $spacing-sm $spacing-md;
+    color: $color-gray;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: none;
+    white-space: nowrap;
+    position: relative;
+    transition: color $transition-fast;
+    font-family: $font-primary;
+
+    &--active {
+      color: $color-white;
+      background-color: $color-primary;
+      border-radius: $border-radius-sm $border-radius-sm 0 0;
+    }
+
+    &:hover:not(&--active) {
+      color: $color-white;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: $spacing-sm 0;
+    border-bottom: 1px solid rgba(95, 87, 87, 0.5);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    font-family: Gotham;
+    font-weight:500;
+    letter-spacing: 1px;
+
+    svg {
+      flex-shrink: 0;
+      color: $color-primary-light;
+    }
+
+     &:last-child {
+    border-bottom: none;
+  }
+  }
+
+  &__disclaimer {
+    font-size: $font-size-xs;
+    color: $color-gray;
+    margin-bottom: $spacing-lg;
+    font-style: italic;
+  }
+
+  &__offer-btn {
+    @include btn-service;
+  }
+  &__learn-more {
+    @include btn-primary;
+  }
+   .services {
+
+  &__tab-btn {
+    @include btn-tab;
+  }
+
+  /* ACTIVE STATE */
+  &__tab--active {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(#000, #000) padding-box,
+      linear-gradient(
+        90deg,
+        rgba(253, 219, 7, 1),
+        rgba(251, 117, 19, 1),
+   
+        
+      ) border-box;
+
+    color: rgba(255, 255, 255, 1);/* active text color */
+  }
+}
+
+}
+
+
+@media(max-width:768px){
+  
+  
+  .services__tabs {
+    flex-direction: column;
+    align-items: flex-start;   // IMPORTANT
+  }
+
+  .services__tab {
+    width: fit-content;        // shrink to text
+    max-width: 100%;
+    white-space: normal;       // allow wrapping
+  }
+  .services__heading{
+    font-size: 40px;
+
+  }
+}

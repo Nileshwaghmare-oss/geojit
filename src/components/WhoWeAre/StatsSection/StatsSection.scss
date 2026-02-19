@@ -1,0 +1,110 @@
+.stats__section {
+  width: 100%;
+  padding: 120px 72px;
+  background-color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 70px 24px;
+  }
+
+  .stats__container {
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    padding: 0 !important;
+
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      position: relative;
+
+      .stat__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 30px;
+        text-align: center;
+
+        @media (max-width: 768px) {
+          padding: 0;
+
+        }
+
+        .stat__icon {
+          width: 80px;
+          height: 80px;
+          margin-bottom: 20px;
+        }
+
+        .stat__value {
+          font-size: 96px;
+          font-weight: 700;
+          line-height: 1;
+
+          @media (max-width: 768px) {
+            font-size: 64px;
+          }
+
+          .stat__prefix,
+          .stat__suffix {
+            font-size: 48px;
+            font-weight: 500;
+            margin-left: 4px;
+          }
+        }
+
+        .stat__label {
+          margin-top: 12px;
+          font-size: 16px;
+          letter-spacing: 0.2em;
+          font-weight: 400;
+          color: #000;
+
+          @media (max-width: 768px) {
+            letter-spacing: 10%;
+          }
+        }
+      }
+
+      /* Vertical Divider */
+      .stats__divider--vertical {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        transform: translateX(-50%);
+        background: linear-gradient(to bottom,
+            #f7c600,
+            #ff3b3b,
+            #b56cff);
+      }
+
+      /* Horizontal Divider */
+      .stats__divider--horizontal {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        transform: translateY(-50%);
+        background: linear-gradient(to right,
+            #f7c600,
+            #ff3b3b,
+            #b56cff);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .stats__grid {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    .stats__divider--vertical,
+    .stats__divider--horizontal {
+      display: none;
+    }
+  }
+}

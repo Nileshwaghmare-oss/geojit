@@ -1,0 +1,81 @@
+// Colors
+$color-primary: transparent;
+$color-primary-dark:rgba(8, 132, 125, 1);
+$color-primary-light: #0E8C66;
+$color-dark: #1A1A1A;
+$color-dark-bg: #111111;
+$color-dark-section: #1C1C1C;
+$color-white: rgba(255, 255, 255, 1);
+$color-off-white: rgba(240, 238, 233, 1);
+$color-light-bg: #F5F5F0;
+$color-gray: #999999;
+$color-gray-light: #E5E5E5;
+$color-gray-dark: #666666;
+$color-text: #333333;
+$color-text-light: #777777;
+$color-teal-overlay: rgba(11, 107, 79, 0.85);
+$color-dark-overlay: rgba(17, 17, 17, 0.75);
+
+// Typography
+$font-primary: 'Gotham';
+$font-heading: 'Gotham';
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-md: 1.125rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 2rem;
+$font-size-3xl: 2.5rem;
+$font-size-4xl: 3rem;
+$font-size-5xl: 3.5rem;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
+$spacing-3xl: 6rem;
+$spacing-4xl: 8rem;
+
+// Layout
+$container-max: 1320px;
+$container-padding: 1.5rem;
+$navbar-height: 72px;
+
+// Borders
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// Shadows
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+$shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+
+$margin-top: 16px;
+$margin-bottom: 16px;
+$margin-top: 56px;
+
+
+
+
+
+
